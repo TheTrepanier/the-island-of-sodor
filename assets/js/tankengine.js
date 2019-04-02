@@ -13,7 +13,7 @@ $("#submit-button").on("click", function() {
         destination: destination,
         firstTrainTime: firstTrainTimeUnix,
         frequency: frequency
-    }
+    };
 
     database.ref().push(newTrain);
 
@@ -39,13 +39,7 @@ database.ref().on("child_added", function(childSnapshot) {
         nextTrainTime += (frequency * 60);        
     }
 
-
     var nextTrainTimeReadable = moment.unix(nextTrainTime).format("HH:mm");
-
-    console.log(firstTrainTime);
-    console.log(firstTrainTimeReadable);
-    console.log(nextTrainTimeReadable);
-    
 
     var trainNameCol = $("<td>").text(trainName);
     var destinationCol = $("<td>").text(destination);
