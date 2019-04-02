@@ -8,19 +8,29 @@ $("#submit-button").on("click", function() {
     var firstTrainTimeUnix = moment(firstTrainTime).format("X");
     var frequency = $("#frequency").val().trim();
 
-    var newTrain = {
-        name: trainName,
-        destination: destination,
-        firstTrainTime: firstTrainTimeUnix,
-        frequency: frequency
-    };
+    if (trainName != "" && destination != "" && firstTrainTimeString != "" && frequency != "") {
+        $("#add-train-card").removeClass("border-danger");
+        $("#add-train-card-header").removeClass("text-danger");
+        $("#error-message").addClass("text-hide");
 
-    database.ref().push(newTrain);
-
-    $("#train-name").val("");
-    $("#destination").val("");
-    $("#first-train-time").val("");
-    $("#frequency").val(""); 
+        var newTrain = {
+            name: trainName,
+            destination: destination,
+            firstTrainTime: firstTrainTimeUnix,
+            frequency: frequency
+        };
+    
+        database.ref().push(newTrain);
+    
+        $("#train-name").val("");
+        $("#destination").val("");
+        $("#first-train-time").val("");
+        $("#frequency").val("");     
+    } else {
+        $("#add-train-card").addClass("border-danger");
+        $("#add-train-card-header").addClass("text-danger");
+        $("#error-message").removeClass("text-hide");
+    }
 });
 
 database.ref().on("child_added", function(childSnapshot) {
