@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="assets/js/firebase.js"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/thomas.css">
+
+    <title>Island of Sodor Schedule</title>
+  </head>
+  <body>
+    <div id="root" class="container"></div>
+        <div id="header" class="w-75 mx-auto jumbotron">
+            <h1 id="masthead" class="mx-auto text-center p-5">The Daily Schedule for Thomas and Friends</h1>
+        </div>
+        <div class="card w-75 mx-auto mt-4">
+            <h5 class="card-header">Current Train Schedule</h5>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card w-75 mx-auto my-4">
+            <h5 class="card-header">Add Train</h5>
+            <div class="card-body">
+                <label for="train-name">Train Name</label>
+                <input type="text" class="form-control" id="train-name" placeholder="Percy">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destination" placeholder="Island of Man">
+                <label for="first-train-time">First Train Time (HH:mm - 24hr)</label>
+                <input type="text" class="form-control" id="first-train-time" placeholder="18:00">
+                <label for="frequency">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency" placeholder="22">
+                <button id="submit-button" class="btn btn-primary mt-3">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <script src="assets/js/tankengine.js"></script>
+  </body>
+</html>
